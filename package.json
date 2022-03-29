@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/EJComp-Unesp/PURECO-backend.git",
-  "author": "lamasog <gvnalamas@tutanota.com>",
   "license": "MIT",
   "scripts": {
     "start": "node src/server.js"
@@ -11,6 +10,8 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "mongodb": "^4.4.1",
+    "mongoose": "^6.2.4",
     "nodemon": "^2.0.15"
   }
 }
