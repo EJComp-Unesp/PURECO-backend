@@ -5,9 +5,10 @@
   "repository": "https://github.com/EJComp-Unesp/PURECO-backend.git",
   "license": "MIT",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "nodemon src/server.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "mongodb": "^4.4.1",

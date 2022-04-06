@@ -1,5 +1,3 @@
-// const path = require('path');
-// const routes = require('./routes');
 const app = require('./app');
 
 require('dotenv').config();
