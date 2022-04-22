@@ -10,17 +10,19 @@ require('dotenv').config();
 app.use(cors());
 app.use(express.json());
 
-//const upload = require("multer")();
-app.post('/send',/*upload.single('anexo') */ (req, res, next) => {
-    const nome = "req.body.nome";
-    const email = "req.body.email";
-    const mensagem = "req.body.mensagem";
-    //const anexo = req.file;
+app.post('/send', (req, res, next) => {
+    console.log(req.body);
+
+    const nome = req.body.nome;
+    const email = req.body.email;
+    const assunto = req.body.assunto;
+    const msg = req.body.msg;
 
     res.json({
         nome,
         email,
-        mensagem
+        assunto,
+        msg
     });
 })
 
