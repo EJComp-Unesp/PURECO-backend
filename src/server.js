@@ -2,21 +2,23 @@
 // const routes = require('./routes');
 const app = require('./app');
 //const nodemailer = require("nodemailer");
-const cors = require("cors");
+// const cors = require("cors");
 const express = require("express");
+const bodyParser = require('body-parser');
 
 require('dotenv').config();
 
-app.use(cors());
 app.use(express.json());
+app.use(require("cors")());
+app.use(bodyParser.json());
+
+app.get('/', (req, res, next) => {
+    res.json({message: "Ok"});
+})
 
 app.post('/send', (req, res, next) => {
-    console.log(req.body);
 
-    const nome = req.body.nome;
-    const email = req.body.email;
-    const assunto = req.body.assunto;
-    const msg = req.body.msg;
+    const {nome, email, assunto, msg} = req.body;
 
     res.json({
         nome,
