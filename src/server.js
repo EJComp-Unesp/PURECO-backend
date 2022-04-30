@@ -20,12 +20,11 @@ app.post('/send', (req, res, next) => {
 
     const {nome, email, assunto, msg} = req.body;
 
-    res.json({
-        nome,
-        email,
-        assunto,
-        msg
-    });
+    require('./services/mailService')(nome, email, assunto, msg)
+        .then(response => res.json(response))
+        .catch(error => {
+            res.status(500).json(error)
+        });
 })
 
 const PORT = process.env.PORT || process.env.LOCAL_PORT;
